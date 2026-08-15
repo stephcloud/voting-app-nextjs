@@ -22,7 +22,7 @@ export function VoteProvider({ children }: { children: ReactNode }) {
   const [hasVoted, setHasVoted] = useState(false);
   const [votedFor, setVotedFor] = useState<string | null>(null);
 
-  // On first load, check localStorage for existing votes
+  // Check localStorage for the first time of loading
   useEffect(() => {
     const saved = localStorage.getItem(STORAGE_KEY);
     if (saved) {
@@ -33,14 +33,14 @@ export function VoteProvider({ children }: { children: ReactNode }) {
     }
   }, []);
 
-  // Whenever state changes, save it back to localStorage
+  // save to localStorage section
   useEffect(() => {
     const state: VoteState = { candidates, hasVoted, votedFor };
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   }, [candidates, hasVoted, votedFor]);
 
   function castVote(candidateId: string) {
-    if (hasVoted) return; // guard: prevent double voting
+    if (hasVoted) return;
 
     setCandidates((prev) =>
       prev.map((c) =>

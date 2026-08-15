@@ -8,6 +8,7 @@ export interface Candidate {
 export interface VoteState {
   candidates: Candidate[];
   hasVoted: boolean;
-  votedFor: string | null; // candidate id, or null if not voted yet
+  votedFor: string | null;
 }
+
 
