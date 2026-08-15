@@ -1,40 +1,15 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+## How voting works
 
-## Getting Started
+1. A voter searches for a candidate by name, or browses the full list
+2. Selecting a candidate shows a confirmation card, nothing is cast yet
+3. Confirming the vote updates state and saves it to localStorage
+4. The voter sees who's currently leading, then can view full results
+5. Results rank all candidates by vote count. First place is labeled Head of House, second is Assistant Head of House, everyone else is a runner-up. Candidates with zero votes are shown honestly as having no votes yet, not falsely ranked.
 
-First, run the development server:
+## What I'd add with a backend
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+This version has no backend, so "one vote per browser" is the closest it can get to "one vote per person." A real backend would allow proper per-user authentication and true one-vote-per-person enforcement, plus centralized results instead of results being calculated per-browser from local data.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Built by
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+Afunogu Stephanie Chinaecherem, HackathonAfrica 3.0, AfricaPlan Foundation.
